@@ -1,31 +1,20 @@
-.popupImage {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.popup__opened {
-  display: flex; /* Força o display para flex quando a classe é adicionada */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
+.popup__image-content {
+  position: relative;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  padding: 20px;
-  opacity: 1;
+  text-align: center;
+  padding-top: 20px; /* Espaço extra no topo para o botão */
 }
 
-.popupImage__big {
+.popup__image {
   max-width: 75vw;
   max-height: 75vh;
   object-fit: contain;
 }
 
-.popupImage__title {
+.popup__image-title {
+  background-color: black;
   color: #fff;
   margin-top: 15px;
   text-align: left;
@@ -34,14 +23,6 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.25;
-}
-
-.popupImage__wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px; /* Espaço extra no topo para o botão */
 }
 
 /*------- Consulta midia PEQUENA -------*/

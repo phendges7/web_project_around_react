@@ -1,7 +1,7 @@
 export default function Popup(props) {
   const { onClose, title, children, className } = props;
   return (
-    <div className={`popup ${className}`} id="popupProfile">
+    <div className={`popup ${className}`}>
       <div
         className={`popup__content ${
           !title ? "popup__content_content_image" : ""

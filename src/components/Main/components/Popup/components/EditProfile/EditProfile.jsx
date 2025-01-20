@@ -13,8 +13,8 @@ export default function EditProfile() {
           id="user-name"
           class="popup__input popup__input_type_name"
           placeholder="Nome"
-          minlength="2"
-          maxlength="40"
+          minLength="2"
+          maxLength="40"
           required
         />
         <span class="popup__input-error" data-input="firstInput"></span>

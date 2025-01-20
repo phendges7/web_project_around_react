@@ -1,6 +1,8 @@
 import avatar from "../../images/avatarDefault.jpg";
+import editProfileButton from "../../images/editButton.svg";
 import Popup from "./components/Popup/Popup";
 import Card from "./components/Card/Card";
+import ImagePopup from "./components/ImagePopup/ImagePopup";
 import NewCard from "./components/Popup/components/NewCard/NewCard";
 import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
@@ -41,11 +43,8 @@ export default function Main() {
     },
   ];
 
-  console.log(cards);
-
   //manipuladores popup
   function handleOpenPopup(popup) {
-    debugger;
     setPopup(popup);
   }
 
@@ -67,7 +66,7 @@ export default function Main() {
           <div className="profile__info">
             <h1 className="profile__name">Pedro Henrique</h1>
             <img
-              src="./images/editButton.svg"
+              src={editProfileButton}
               alt="Editar Perfil"
               className="profile__edit-button"
               onClick={() => handleOpenPopup(editProfilePopup)}
@@ -86,16 +85,25 @@ export default function Main() {
         <Popup
           onClose={handleClosePopup}
           title={popup.title}
-          className="popup__opened" // Aqui estamos adicionando a classe popup__opened
+          className="popup__opened" // Adicionando classe popup__opened
         >
           {popup.children}
         </Popup>
       )}
-      <ul className="card-grid">
+      <div className="card-grid">
         {cards.map((card) => (
-          <Card key={card._id} card={card} />
+          <Card
+            key={card._id}
+            card={card}
+            onImageClick={() =>
+              handleOpenPopup({
+                title: "",
+                children: <ImagePopup card={card} onClose={handleClosePopup} />,
+              })
+            }
+          />
         ))}
-      </ul>
+      </div>
     </main>
   );
 }
