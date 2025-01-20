@@ -147,7 +147,7 @@ Esta aplicação utiliza React para criar componentes reutilizáveis e modulares
 
 Fonte Inter do [site oficial](https://rsms.me/inter/).
 
-Link do website: [https://phendges7.github.io/web_project_around/](https://phendges7.github.io/web_project_around/)
+Link do website: [https://phendges7.github.io/web_project_around/](https://phendges7.github.io/web_project_around-react/)
 
 ## Autor
 
