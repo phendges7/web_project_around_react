@@ -24,10 +24,6 @@ cd web-react-project
 npm install
 ```
 
-## Uso de React
-
-Esta aplicação utiliza React para criar componentes reutilizáveis e modulares, facilitando a manutenção e expansão do código. A abordagem de componentes do React permite que cada parte da interface do usuário seja desenvolvida isoladamente, promovendo um fluxo de trabalho eficiente e organizado.
-
 ## Desenvolvimento
 
 ### Executando o Projeto
@@ -142,9 +138,10 @@ Adaptação a diferentes tamanhos de tela usando `@media` queries.
 
 Utilização de layout em grid para organização eficiente do conteúdo.
 
-### JavaScript
+## ReactJS
 
-Interação com o usuário através de formulários e validações.
+Esta aplicação utiliza React para criar componentes reutilizáveis e modulares, facilitando a manutenção e expansão do código. 
+
 
 ## Dependências
 
