@@ -48,7 +48,7 @@ export default function Main() {
     setPopup(popup);
   }
 
-  function handleClosePopup(popup) {
+  function handleClosePopup() {
     setPopup(null);
   }
 

@@ -11,29 +11,29 @@ export default function EditProfile() {
           type="text"
           name="firstInput"
           id="user-name"
-          class="popup__input popup__input_type_name"
+          className="popup__input popup__input_type_name"
           placeholder="Nome"
           minLength="2"
           maxLength="40"
           required
         />
-        <span class="popup__input-error" data-input="firstInput"></span>
+        <span className="popup__input-error" data-input="firstInput"></span>
       </label>
       <label className="popup__field">
         <input
           type="text"
           name="secondInput"
           id="user-description"
-          class="popup__input popup__input_type_description"
+          className="popup__input popup__input_type_description"
           placeholder="Sobre mim"
           minLength="2"
           maxLength="200"
           required
         />
-        <span class="popup__input-error" data-input="secondInput"></span>
+        <span className="popup__input-error" data-input="secondInput"></span>
       </label>
 
-      <button type="submit" class="popup__submit-button">
+      <button type="submit" className="popup__submit-button">
         SALVAR
       </button>
     </form>

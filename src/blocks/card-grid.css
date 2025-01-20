@@ -80,6 +80,8 @@
   height: 19px;
   z-index: 1;
   cursor: pointer;
+  background: url(../images/deleteButton.svg) center;
+  border: none;
 }
 
 /*------- Consulta midia MEDIA -------*/

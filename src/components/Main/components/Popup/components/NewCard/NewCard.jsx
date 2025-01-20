@@ -24,7 +24,7 @@ export default function NewCard() {
           className="popup__input popup__input_type_url"
           id="card-link"
           name="secondInput"
-          placeholder="Image link"
+          placeholder="URL da imagem"
           type="url"
           minLength="2"
           maxLength="200"
