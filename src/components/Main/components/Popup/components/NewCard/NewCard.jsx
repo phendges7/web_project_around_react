@@ -1,11 +1,6 @@
 export default function NewCard() {
   return (
-    <form
-      className="popup__form"
-      name="card-form"
-      id="new-card-form"
-      noValidate
-    >
+    <form className="popup__form" name="card-form" id="new-card-form">
       <label className="popup__field">
         <input
           className="popup__input popup__input_type_card-name"

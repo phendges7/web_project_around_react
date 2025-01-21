@@ -3,48 +3,15 @@ import editProfileButton from "../../images/editButton.svg";
 import Popup from "./components/Popup/Popup";
 import Card from "./components/Card/Card";
 import ImagePopup from "./components/ImagePopup/ImagePopup";
-import NewCard from "./components/Popup/components/NewCard/NewCard";
-import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
-import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
-
 import { useState } from "react";
+import { popups, cards } from "./components/constants.jsx";
 
 export default function Main() {
   const [popup, setPopup] = useState(null);
 
-  //instancia popups
-  const newCardPopup = { title: "NOVO LOCAL", children: <NewCard /> };
-  const editAvatarPopup = {
-    title: "Alterar foto de perfil",
-    children: <EditAvatar />,
-  };
-  const editProfilePopup = {
-    title: "EDITAR PERFIL",
-    children: <EditProfile />,
-  };
-
-  //mock cards
-  const cards = [
-    {
-      isLiked: false,
-      _id: "5d1f0611d321eb4bdcd707dd",
-      name: "Yosemite Valley",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-      owner: "5d1f0611d321eb4bdcd707dd",
-      createdAt: "2019-07-05T08:10:57.741Z",
-    },
-    {
-      isLiked: false,
-      _id: "5d1f064ed321eb4bdcd707de",
-      name: "Lake Louise",
-      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-      owner: "5d1f0611d321eb4bdcd707dd",
-      createdAt: "2019-07-05T08:11:58.324Z",
-    },
-  ];
-
   //manipuladores popup
   function handleOpenPopup(popup) {
+    debugger;
     setPopup(popup);
   }
 
@@ -59,7 +26,7 @@ export default function Main() {
           <img src={avatar} alt="Foto de Perfil" className="profile__picture" />
           <div
             className="profile__overlay"
-            onClick={() => handleOpenPopup(editAvatarPopup)}
+            onClick={() => handleOpenPopup(popups.editAvatarPopup)}
           ></div>
         </div>
         <div className="profile__info-wrapper">
@@ -69,7 +36,7 @@ export default function Main() {
               src={editProfileButton}
               alt="Editar Perfil"
               className="profile__edit-button"
-              onClick={() => handleOpenPopup(editProfilePopup)}
+              onClick={() => handleOpenPopup(popups.editProfilePopup)}
             />
           </div>
           <p className="profile__description">Explorador</p>
@@ -78,7 +45,7 @@ export default function Main() {
           aria-label="Add card"
           className="profile__add-place-button"
           type="button"
-          onClick={() => handleOpenPopup(newCardPopup)}
+          onClick={() => handleOpenPopup(popups.newCardPopup)}
         ></button>
       </div>
       {popup && (
