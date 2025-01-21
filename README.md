@@ -1,4 +1,3 @@
-<<<<<<< refactoringREACT
 # Documentação do Projeto Web ReactJS
 
 ## Visão Geral
