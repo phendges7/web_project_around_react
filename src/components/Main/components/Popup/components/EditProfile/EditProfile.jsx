@@ -1,11 +1,6 @@
 export default function EditProfile() {
   return (
-    <form
-      className="popup__form"
-      name="card-form"
-      id="new-card-form"
-      noValidate
-    >
+    <form className="popup__form" name="card-form" id="new-card-form">
       <label className="popup__field">
         <input
           type="text"
