@@ -11,7 +11,6 @@ export default function Main() {
 
   //manipuladores popup
   function handleOpenPopup(popup) {
-    debugger;
     setPopup(popup);
   }
 
