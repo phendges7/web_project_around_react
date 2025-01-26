@@ -138,7 +138,7 @@ Adaptação a diferentes tamanhos de tela usando `@media` queries.
 
 Utilização de layout em grid para organização eficiente do conteúdo.
 
-## ReactJS
+## ReactJS - TESTES GITHUB DESKTOP
 
 Esta aplicação utiliza React para criar componentes reutilizáveis e modulares, facilitando a manutenção e expansão do código.
 
