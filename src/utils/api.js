@@ -87,7 +87,8 @@ class Api {
       });
   }
 
-  addCard({ name, link }) {
+  addNewCard({ name, link }) {
+    console.log("addCard", name, link);
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
