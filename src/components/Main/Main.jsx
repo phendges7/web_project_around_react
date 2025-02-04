@@ -5,7 +5,7 @@ import avatar from "../../images/avatarDefault.jpg";
 import Popup from "./components/Popup/Popup";
 import Card from "./components/Card/Card";
 import ImagePopup from "./components/ImagePopup/ImagePopup";
-import { popups } from "./components/constants.jsx";
+import { Popups } from "./components/constants.jsx";
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 
 export default function Main({
@@ -38,7 +38,7 @@ export default function Main({
           />
           <div
             className="profile__overlay"
-            onClick={() => onOpenPopup(popups.editAvatarPopup)}
+            onClick={() => onOpenPopup(Popups.editAvatarPopup)}
           ></div>
         </div>
         <div className="profile__info-wrapper">
@@ -48,7 +48,7 @@ export default function Main({
               src={editProfileButton}
               alt="Editar Perfil"
               className="profile__edit-button"
-              onClick={() => onOpenPopup(popups.editProfilePopup)}
+              onClick={() => onOpenPopup(Popups.editProfilePopup)}
             />
           </div>
           <p className="profile__description">{currentUser?.about}</p>
@@ -57,7 +57,7 @@ export default function Main({
           aria-label="Add card"
           className="profile__add-place-button"
           type="button"
-          onClick={() => onOpenPopup(popups.newCardPopup)}
+          onClick={() => onOpenPopup(Popups.newCardPopup)}
         ></button>
       </div>
       {popup && (

@@ -2,7 +2,7 @@ import EditAvatar from "./Popup/components/EditAvatar/EditAvatar";
 import EditProfile from "./Popup/components/EditProfile/EditProfile";
 import NewCard from "./Popup/components/NewCard/NewCard";
 
-export const popups = {
+export const Popups = {
   editAvatarPopup: {
     title: "Alterar foto de perfil",
     children: <EditAvatar />,
