@@ -1,8 +1,26 @@
+import { useRef, useContext } from "react";
+import CurrentUserContext from "../../../../../../contexts/CurrentUserContext.js";
+
 export default function EditAvatar() {
+  const avatarRef = useRef();
+  const { handleUpdateAvatar } = useContext(CurrentUserContext);
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    handleUpdateAvatar(avatarRef.current.value);
+  };
+
   return (
-    <form className="popup__form" name="avatar-form" id="edit-avatar-form">
+    <form
+      className="popup__form"
+      name="avatar-form"
+      id="edit-avatar-form"
+      onSubmit={handleSubmit}
+    >
       <label className="popup__field">
         <input
+          ref={avatarRef}
           className="popup__input popup__input_type_url"
           id="avatar-link"
           name="firstInput"

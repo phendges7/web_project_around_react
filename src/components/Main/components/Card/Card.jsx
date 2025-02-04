@@ -1,9 +1,29 @@
-export default function Card({ card, onImageClick }) {
+export default function Card({
+  card,
+  onImageClick,
+  isLiked,
+  onCardLike,
+  onCardDelete,
+}) {
   const { name, link } = card;
+
   const imageComponent = {
     title: name,
     children: <img src={link} alt={name} className="popup__image" />,
   };
+
+  const cardLikeButtonClassName = `card__like-button ${
+    isLiked ? "active" : ""
+  }`;
+
+  function handleLikeClick() {
+    onCardLike(card);
+  }
+
+  function handleDeleteClick() {
+    onCardDelete(card);
+  }
+
   return (
     <div className="card">
       <img
@@ -16,9 +36,14 @@ export default function Card({ card, onImageClick }) {
         aria-label="DELETE"
         className="card__delete-button"
         type="button"
+        onClick={handleDeleteClick}
       />
       <h2 className="card__title">{name}</h2>
-      <button aria-label="LIKE" className="card__like-button"></button>
+      <button
+        aria-label="LIKE"
+        className={cardLikeButtonClassName}
+        onClick={handleLikeClick}
+      ></button>
     </div>
   );
 }

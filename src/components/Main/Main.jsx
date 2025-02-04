@@ -1,74 +1,72 @@
-import avatar from "../../images/avatarDefault.jpg";
+import { useContext } from "react";
+
 import editProfileButton from "../../images/editButton.svg";
+import avatar from "../../images/avatarDefault.jpg";
 import Popup from "./components/Popup/Popup";
 import Card from "./components/Card/Card";
 import ImagePopup from "./components/ImagePopup/ImagePopup";
-import { useState } from "react";
-import { popups, cards } from "./components/constants.jsx";
-
-export default function Main() {
-  const [popup, setPopup] = useState(null);
-
-  //manipuladores popup
-  function handleOpenPopup(popup) {
-    setPopup(popup);
-  }
-
-  function handleClosePopup() {
-    setPopup(null);
-  }
+import { popups } from "./components/constants.jsx";
+import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 
   return (
     <main className="content">
       <div className="profile">
         <div className="profile__picture-container">
-          <img src={avatar} alt="Foto de Perfil" className="profile__picture" />
+          <img
+            src={currentUser?.avatar || avatar}
+            alt="Foto de Perfil"
+            className="profile__picture"
+          />
           <div
             className="profile__overlay"
-            onClick={() => handleOpenPopup(popups.editAvatarPopup)}
+            onClick={() => onOpenPopup(popups.editAvatarPopup)}
           ></div>
         </div>
         <div className="profile__info-wrapper">
           <div className="profile__info">
-            <h1 className="profile__name">Pedro Henrique</h1>
+            <h1 className="profile__name">{currentUser?.name}</h1>
             <img
               src={editProfileButton}
               alt="Editar Perfil"
               className="profile__edit-button"
-              onClick={() => handleOpenPopup(popups.editProfilePopup)}
+              onClick={() => onOpenPopup(popups.editProfilePopup)}
             />
           </div>
-          <p className="profile__description">Explorador</p>
+          <p className="profile__description">{currentUser?.about}</p>
         </div>
         <button
           aria-label="Add card"
           className="profile__add-place-button"
           type="button"
-          onClick={() => handleOpenPopup(popups.newCardPopup)}
+          onClick={() => onOpenPopup(popups.newCardPopup)}
         ></button>
       </div>
       {popup && (
         <Popup
-          onClose={handleClosePopup}
+          onClose={onClosePopup}
           title={popup.title}
-          className="popup__opened" // Adicionando classe popup__opened
+          className="popup__opened"
         >
           {popup.children}
         </Popup>
       )}
       <div className="card-grid">
-        {cards.map((card) => (
-          <Card
-            key={card._id}
-            card={card}
-            onImageClick={() =>
-              handleOpenPopup({
-                title: "",
-                children: <ImagePopup card={card} onClose={handleClosePopup} />,
-              })
-            }
-          />
-        ))}
+        {Array.isArray(cards) &&
+          cards.map((card) => (
+            <Card
+              key={card._id}
+              card={card}
+              isLiked={card.isLiked}
+              onCardLike={onCardLike}
+              onCardDelete={onCardDelete}
+              onImageClick={() =>
+                onOpenPopup({
+                  title: "",
+                  children: <ImagePopup card={card} onClose={onClosePopup} />,
+                })
+              }
+            />
+          ))}
       </div>
     </main>
   );
