@@ -18,14 +18,6 @@ export default function Main({
 }) {
   //carregar dados do usuário
   const { currentUser } = useContext(CurrentUserContext);
-  //manipuladores popup
-  function handleOpenPopup(popup) {
-    setPopup(popup);
-  }
-
-  function handleClosePopup() {
-    setPopup(null);
-  }
 
   return (
     <main className="content">
