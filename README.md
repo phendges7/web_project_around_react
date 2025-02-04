@@ -111,6 +111,18 @@ vite.config.js
 - `src/components/Main/components/Popup/components/EditProfile/EditProfile.jsx`: Componente para edição de perfil.
 - `src/components/Main/components/Popup/components/NewCard/NewCard.jsx`: Componente para criação de novos cartões.
 - `src/components/Main/components/Popup/Popup.jsx`: Componente genérico de popup reutilizável.
+- `src/components/Main/components/constants.jsx`: Arquivo responsável por armazenar as constantes utilizadas na aplicação, como identificadores de popups e cartões para popular a aplicação.
+- `src/components/Main/Main.jsx`: Componente principal que reúne os cartões, o popup de edição e o formulário para adicionar novos cartões. Ele recebe as funções de manipulação de dados (como adicionar, curtir e excluir cartões) através de props.
+- `src/App.jsx`: Componente raiz da aplicação. Gerencia o estado global de usuários, cartões e popups, e faz o controle das interações entre componentes.
+
+### Estrutura de Contextos
+
+- `src/contexts/CardContext.js`: Contexto que gerencia o estado e as operações relacionadas aos cartões, como adicionar, curtir, excluir e atualizar os cartões. Ele fornece um estado global acessível por toda a aplicação.
+- `src/contexts/CurrentUserContext.js`: Contexto que armazena as informações do usuário atual, como nome, descrição e avatar. Ele facilita o gerenciamento do estado do usuário em toda a aplicação.
+
+### Utilitários
+
+- `src/utils/api.js`: Arquivo com funções responsáveis por fazer chamadas à API para recuperar, adicionar, atualizar e excluir dados, como informações de usuários e cartões. Ele abstrai a comunicação com o servidor, permitindo que a aplicação interaja com os dados.
 
 ### Outros Arquivos
 
@@ -166,7 +178,3 @@ Este projeto demonstra o uso inicial do ReactJS com foco em popups e criação d
 ## Licença
 
 Este projeto é de uso livre para fins educacionais e pessoais.
-
----
-
-Adicionei as informações sobre o uso de **elevação de estado**, **contextos**, **hooks** e **referências** no gerenciamento dos cartões e outros componentes. Isso deve alinhar melhor a documentação com as alterações feitas no seu projeto!
