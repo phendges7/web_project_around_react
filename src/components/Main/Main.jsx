@@ -8,6 +8,25 @@ import ImagePopup from "./components/ImagePopup/ImagePopup";
 import { popups } from "./components/constants.jsx";
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 
+export default function Main({
+  onOpenPopup,
+  onClosePopup,
+  popup,
+  cards = [],
+  onCardLike,
+  onCardDelete,
+}) {
+  //carregar dados do usuário
+  const { currentUser } = useContext(CurrentUserContext);
+  //manipuladores popup
+  function handleOpenPopup(popup) {
+    setPopup(popup);
+  }
+
+  function handleClosePopup() {
+    setPopup(null);
+  }
+
   return (
     <main className="content">
       <div className="profile">
