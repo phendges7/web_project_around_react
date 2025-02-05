@@ -29,7 +29,7 @@ export default function Card({
       <img
         className="card__image"
         src={link}
-        alt=""
+        alt={name}
         onClick={() => onImageClick(imageComponent)}
       />
       <button

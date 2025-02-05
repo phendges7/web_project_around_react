@@ -67,11 +67,13 @@ function App() {
   //manipulador de abrir popup
   const handleOpenPopup = (popup) => {
     setPopup(popup);
+    document.querySelector(".overlay")?.classList.add("visible");
   };
 
   //manipulador de fechar popup
   const handleClosePopup = () => {
     setPopup(null);
+    document.querySelector(".overlay")?.classList.remove("visible");
   };
 
   //------------- PROFILE -------------//
@@ -120,6 +122,7 @@ function App() {
           handleAddPlaceSubmit,
         }}
       >
+        <div class="overlay"></div>
         <div className="page">
           <Header />
           <Main
