@@ -122,7 +122,7 @@ function App() {
           handleAddPlaceSubmit,
         }}
       >
-        <div class="overlay"></div>
+        <div className="overlay"></div>
         <div className="page">
           <Header />
           <Main
